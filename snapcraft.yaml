@@ -1,0 +1,19 @@
+name: futurecropsflower
+version: git
+summary: Flower Sensors
+description: |
+  Flower BLE Mi
+confinement: devmode
+base: core18
+
+parts:
+  futurecropsflower:
+    plugin: python
+    python-version: python3
+    source: .
+    stage-packages:
+      - python-six
+
+apps:
+  futurecropsflower:
+    command: python3 miflora-mqtt-daemon.py
